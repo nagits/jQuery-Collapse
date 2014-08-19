@@ -82,7 +82,8 @@
   // Section constructor
   function Section($el, parent) {
 
-    if(!parent.options.clickQuery) $el.wrapInner('<a href="#"/>');
+    if(!parent.options.clickQuery && !$el.is('[data-collapse-summary]')) 
+      $el.wrapInner('<a href="#"/>');
 
     $.extend(this, {
       isOpen : false,
